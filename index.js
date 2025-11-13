@@ -14,19 +14,26 @@ const app = express();
 
 app.use(express.json());
 
-// ===================  FIXED CORS SECTION ===================
+// ===================  UPDATED CORS SECTION ===================
 // These are the only URLs allowed to make requests to your API
 const allowedOrigins = [
-  'http://localhost:5173', // Your local frontend for testing
+  'http://localhost:5173',      // Your local frontend
+  'http://127.0.0.1:5173',     // Added this common alias for localhost
   'https://learning-management-system-frontend-mocha.vercel.app' // Your deployed Vercel frontend
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
+    // 'origin' is the URL of the frontend making the request
+    
     // Check if the incoming request origin is in our allowed list
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      // Allow request if it has no origin (like Postman/Insomnia)
+      // or if the origin is in our allowed list
       callback(null, true);
     } else {
+      // THIS IS NEW: Log the exact origin that was blocked
+      console.error(`CORS ERROR: This origin is not allowed: ${origin}`);
       callback(new Error('Not allowed by CORS'));
     }
   },
