@@ -19,7 +19,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173", // local dev
   "http://127.0.0.1:5173", // local dev alias
-  "https://learning-management-system-frontend-mocha.vercel.app" // your Vercel frontend
+  "https://learning-management-system-frontend-nine-beta.vercel.app/" // your Vercel frontend
 ];
 
 app.use(
