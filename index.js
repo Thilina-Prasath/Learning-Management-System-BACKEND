@@ -15,18 +15,23 @@ app.use(express.json());
 
 // ===================  THE FINAL CORS LIST  ===================
 // This list now includes ALL your Vercel deployment URLs.
+// ===================  THE FINAL CORS LIST  ===================
 const allowedOrigins = [
-  // --- Local Testing ---
-  "http://localhost:5173",
-  "http://127.0.0.1:5173",
+  // --- Local Testing ---
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
 
-  // --- Deployed Vercel Sites (All of them) ---
-  "https://learning-management-system-frontend-mocha.vercel.app",
-  "https://learning-management-system-frontend-dun.vercel.app",
-  "https://learning-management-syste-git-cf9b8c-prasaths-projects-16ccf692.vercel.app",
-  "https://learning-management-system-frontend-nine-beta.vercel.app",
-  "https://learning-management-system-frontend-teal.vercel.app",
-  "https://learning-management-system-frontend-md5zg12by.vercel.app"
+  // --- Deployed Vercel Sites (All of them) ---
+  "https://learning-management-system-frontend-mocha.vercel.app",
+  "https://learning-management-system-frontend-dun.vercel.app",
+  "https://learning-management-syste-git-cf9b8c-prasaths-projects-16ccf692.vercel.app",
+  "https://learning-management-system-frontend-nine-beta.vercel.app",
+  "https://learning-management-system-frontend-teal.vercel.app",
+  "https://learning-management-system-frontend-md5zg12by.vercel.app",
+
+  // --- ADD THESE TWO NEW DOMAINS ---
+  "https://learning-management-system-frontend-q8szg7th02.vercel.app",
+  "https://learning-management-system-frontend-flame.vercel.app"
 ];
 
 app.use(
